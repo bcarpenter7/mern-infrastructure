@@ -8,6 +8,5 @@ export default function AuthPage(){
             <h1>AuthPage</h1>
             <SignUpForm />
         </main>
-        
     )
 }

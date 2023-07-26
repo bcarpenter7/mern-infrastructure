@@ -1,5 +1,5 @@
 import { Component } from 'react';
-
+import { signUp } from '../../utilities/users-service'
 
 // Using class component just to show it. Usually would use a function component
 export default class SignUpForm extends Component {
@@ -13,9 +13,19 @@ export default class SignUpForm extends Component {
     };
 
 
-    handleSubmit = e => {
+    handleSubmit = async (e) => {
         e.preventDefault()
-        
+        try {
+            const {name, email, password} = this.state
+            const formData = {name, email, password}
+            // The promise returned by the SignUP service
+            // method will resolve to the user object included
+            // in the payload of the JSON Web Token
+            const user = await signUp(formData)
+        } catch {
+            this.setState({error: 'Sign Up Failed - Try Again Later'})
+        }
+
     }
 
 
