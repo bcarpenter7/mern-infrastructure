@@ -1,7 +1,8 @@
 import './App.css';
 import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import { getUser } from '../../utilities/user-service'
+import { getUser } from '../../utilities/users-service'
+
 import AuthPage from '../AuthPage/AuthPage'
 import NewOrderPage from '../NewOrderPage/NewOrderPage'
 import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage'
